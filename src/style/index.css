@@ -80,16 +80,6 @@ body {
         padding-inline: 10px;
         min-height: 45px;
 
-        .flag-ru {
-          width: 2rem;
-          height: 2rem;
-        }
-
-        .flag-us {
-          width: 2rem;
-          height: 2rem;
-        }
-
         .currency-dropdown {
           font-size: 1rem;
           outline: none;
@@ -135,6 +125,8 @@ body {
       outline: none;
       font-size: 1rem;
       font-weight: 600;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
       cursor: pointer;
       transition: 0.2s easy;
 
