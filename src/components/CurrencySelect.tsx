@@ -6,15 +6,15 @@ interface CurrencyProps {
   handleCurrency: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const currencyCodes = ['EUR', 'RUR', 'USD'];
+const currencyCodes = ['EUR', 'RUB', 'USD'];
 
 const CurrencySelect: FC<CurrencyProps> = ({ selectedCurrency, handleCurrency }) => {
   const getCountryCode = (currency: string) => {
     switch (currency) {
       case 'USD': return 'US';
-      case 'RUR': return 'RU';
+      case 'RUB': return 'RU';
       case 'EUR': return 'EU'; 
-      default: return 'US';
+      default: return 'RU';
     }
   };
 
