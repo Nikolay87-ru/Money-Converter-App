@@ -4,14 +4,14 @@
   width: 100%;
 }
 
-input[type="number"] {
-  -moz-appearance: textfield; 
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 * {
@@ -154,6 +154,16 @@ body {
       margin-top: 30px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.15);
+    }
+
+    .exchange-rate__currency {
+      display: flex;
+      flex-direction: column;
+
+      .exchange-title {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
     }
   }
 }

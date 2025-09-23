@@ -22,20 +22,20 @@ const ConverterForm = () => {
       const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
       const data = await response.json();
 
-      const usdRate = data.Valute.USD.Value; 
-      const eurRate = data.Valute.EUR.Value; 
-      
+      const usdRate = data.Valute.USD.Value;
+      const eurRate = data.Valute.EUR.Value;
+
       setRates({
-        USD: usdRate,     
-        EUR: eurRate,     
-        RUB: 1           
+        USD: usdRate,
+        EUR: eurRate,
+        RUB: 1,
       });
     } catch (error) {
       console.error('Ошибка получения курсов:', error);
       setRates({
-        USD: 93.5,  
-        EUR: 101.2, 
-        RUB: 1
+        USD: 93.5,
+        EUR: 101.2,
+        RUB: 1,
       });
     }
     setLoading(false);
@@ -74,14 +74,14 @@ const ConverterForm = () => {
     if (!rates || !amount) return;
 
     const amountNum = parseFloat(amount);
-    
+
     if (fromCurrency === toCurrency) {
       setConvertedAmount(amountNum.toFixed(2));
       return;
     }
 
     const amountInRUB = amountNum * rates[fromCurrency as keyof ExchangeRates];
-    
+
     const result = amountInRUB / rates[toCurrency as keyof ExchangeRates];
 
     setConvertedAmount(result.toFixed(2));
@@ -118,10 +118,7 @@ const ConverterForm = () => {
 
         <div className="form-section">
           <label className="form-label">В</label>
-          <CurrencySelect
-            selectedCurrency={toCurrency}
-            handleCurrency={handleToCurrencyChange}
-          />
+          <CurrencySelect selectedCurrency={toCurrency} handleCurrency={handleToCurrencyChange} />
         </div>
       </div>
 
@@ -131,6 +128,18 @@ const ConverterForm = () => {
 
       <div className="exchange-rate">
         {convertedAmount && `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`}
+      </div>
+
+      <div className="exchange-rate exchange-rate__currency">
+        <span className="exchange-title">
+          Курсы валют на {new Date().toLocaleDateString()} ЦБ РФ
+        </span>
+        {rates && (
+          <>
+            <span>1 USD = {rates.USD.toFixed(2)} RUB</span>
+            <span>1 EUR = {rates.EUR.toFixed(2)} RUB</span>
+          </>
+        )}
       </div>
     </form>
   );
