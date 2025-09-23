@@ -11,10 +11,14 @@ const currencyCodes = ['EUR', 'RUB', 'USD'];
 const CurrencySelect: FC<CurrencyProps> = ({ selectedCurrency, handleCurrency }) => {
   const getCountryCode = (currency: string) => {
     switch (currency) {
-      case 'USD': return 'US';
-      case 'RUB': return 'RU';
-      case 'EUR': return 'EU'; 
-      default: return 'RU';
+      case 'USD':
+        return 'US';
+      case 'RUB':
+        return 'RU';
+      case 'EUR':
+        return 'EU';
+      default:
+        return 'RU';
     }
   };
 
@@ -24,11 +28,16 @@ const CurrencySelect: FC<CurrencyProps> = ({ selectedCurrency, handleCurrency })
         countryCode={getCountryCode(selectedCurrency)}
         style={{
           fontSize: '2rem',
-          lineHeight: '2rem'
+          lineHeight: '2rem',
         }}
         svg
       />
-      <select className="currency-dropdown" value={selectedCurrency} onChange={handleCurrency}>
+      <select
+        className="currency-dropdown"
+        value={selectedCurrency}
+        onChange={handleCurrency}
+        aria-label="Выберите валюту"
+      >
         {currencyCodes.map((currency) => (
           <option className="currency-dropdown__option" key={currency} value={currency}>
             {currency}
