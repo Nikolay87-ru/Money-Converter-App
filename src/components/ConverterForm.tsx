@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AiOutlineSwap } from 'react-icons/ai';
 import CurrencySelect from './CurrencySelect';
+import { spawn } from 'child_process';
 
 interface ExchangeRates {
   USD: number;
@@ -127,7 +128,11 @@ const ConverterForm = () => {
       </button>
 
       <div className="exchange-rate">
-        {convertedAmount && `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`}
+        {convertedAmount ? (
+          `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`
+        ) : (
+          <span className="exchange-rate__default">Итог конвертации</span>
+        )}
       </div>
 
       <div className="exchange-rate exchange-rate__currency">

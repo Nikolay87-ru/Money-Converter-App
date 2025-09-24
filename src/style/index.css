@@ -154,6 +154,10 @@ body {
       margin-top: 30px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.15);
+
+      .exchange-rate__default {
+        opacity: 0.5;
+      }
     }
 
     .exchange-rate__currency {
