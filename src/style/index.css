@@ -26,7 +26,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url('bg.png') #030728 no-repeat center;
+  background: #030728 no-repeat center;
+  background-image: url('/bg.png');
 }
 
 .currency-converter {
