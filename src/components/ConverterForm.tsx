@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AiOutlineSwap } from 'react-icons/ai';
 import CurrencySelect from './CurrencySelect';
-import { spawn } from 'child_process';
 
 interface ExchangeRates {
   USD: number;
