@@ -26,8 +26,10 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #030728 no-repeat center;
-  background-image: url('/public/bg.png');
+  background: #030728;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url('/bg.png');
 }
 
 .currency-converter {
